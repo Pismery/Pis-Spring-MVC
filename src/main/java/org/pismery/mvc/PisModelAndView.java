@@ -10,7 +10,7 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class MyModelAndView {
+public class PisModelAndView {
     private String viewName;
     private Map<String,Object> model;
 }

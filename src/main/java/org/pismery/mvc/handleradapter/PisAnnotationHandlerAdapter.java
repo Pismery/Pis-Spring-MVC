@@ -1,7 +1,7 @@
 package org.pismery.mvc.handleradapter;
 
 import org.pismery.annotation.PisRequestName;
-import org.pismery.mvc.MyModelAndView;
+import org.pismery.mvc.PisModelAndView;
 import org.pismery.mvc.PisHandler;
 import org.pismery.mvc.util.ParameterNameUtil;
 
@@ -16,7 +16,7 @@ import java.util.Map;
 public class PisAnnotationHandlerAdapter implements PisHandlerAdapter {
 
     @Override
-    public MyModelAndView handle(HttpServletRequest request, HttpServletResponse response, Object handler) {
+    public PisModelAndView handle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         Method method = ((PisHandler) handler).getMethod();
         Parameter[] parameters = method.getParameters();
         Object[] paramValues = getParameterValues(request, response, method, parameters);
@@ -28,7 +28,7 @@ public class PisAnnotationHandlerAdapter implements PisHandlerAdapter {
         } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
-        return (MyModelAndView) mv;
+        return (PisModelAndView) mv;
     }
 
     private Object[] getParameterValues(HttpServletRequest request, HttpServletResponse response, Method method, Parameter[] parameters) {

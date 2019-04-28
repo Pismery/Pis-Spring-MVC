@@ -1,8 +1,8 @@
 package org.pismery.mvc.view;
 
-import org.pismery.mvc.MyModelAndView;
+import org.pismery.mvc.PisModelAndView;
 
 public interface ViewResolver {
-    String parse(MyModelAndView mv);
+    String parse(PisModelAndView mv);
     String matchView();
 }

@@ -6,7 +6,7 @@
   <display-name>Archetype Created Web Application</display-name>
 
   <servlet>
-    <servlet-name>MySpringMVC</servlet-name>
+    <servlet-name>PisSpringMVC</servlet-name>
     <servlet-class>org.pismery.mvc.PisDispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
@@ -17,9 +17,7 @@
 
 
   <servlet-mapping>
-    <servlet-name>MySpringMVC</servlet-name>
+    <servlet-name>PisSpringMVC</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-
-
 </web-app>

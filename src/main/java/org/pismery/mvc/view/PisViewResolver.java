@@ -1,6 +1,6 @@
 package org.pismery.mvc.view;
 
-import org.pismery.mvc.MyModelAndView;
+import org.pismery.mvc.PisModelAndView;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,7 +21,7 @@ public class PisViewResolver implements ViewResolver {
     }
 
     @Override
-    public String parse(MyModelAndView mv) {
+    public String parse(PisModelAndView mv) {
         String result = null;
         try (RandomAccessFile file = new RandomAccessFile(this.file,"r");
              FileChannel channel = file.getChannel()) {

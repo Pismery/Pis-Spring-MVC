@@ -1,7 +1,5 @@
 package org.pismery.mvc;
 
-import org.pismery.annotation.PisController;
-import org.pismery.annotation.PisRequestMapping;
 import org.pismery.mvc.handleradapter.PisAnnotationHandlerAdapter;
 import org.pismery.mvc.handleradapter.PisHandlerAdapter;
 import org.pismery.mvc.handlermapping.PisHandlerMapping;
@@ -15,8 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.*;
 
 public class PisDispatcherServlet extends HttpServlet {
@@ -120,7 +116,7 @@ public class PisDispatcherServlet extends HttpServlet {
             resp.getWriter().write("404 Pis No found!..");
         }
         //2. 通过 handler 调用目标方法；
-        MyModelAndView mv = handlerAdapter.handle(req, resp, handler);
+        PisModelAndView mv = handlerAdapter.handle(req, resp, handler);
 
         if (mv == null || mv.getViewName() == null) {
             resp.getWriter().write("404 Pis No found!..");
